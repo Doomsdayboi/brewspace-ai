@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+
+<html lang="en"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/><meta content="web_blank" name="shell-type"/><title>BrewSpace AI</title><link href="https://fonts.googleapis.com" rel="preconnect"/><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/><link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400..700;1,9..40,400..700&amp;family=Fraunces:opsz,wght@9..144,400..700&amp;display=swap" rel="stylesheet"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><style>@layer base{html,body{margin:0;padding:0;}body{overscroll-behavior:none;}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config={darkMode:"class",theme:{extend:{"colors":{"porcelain":"#FFFCF7","secondary-fixed":"#ccead1","flow-bg":"#E6EDE3","surface-variant":"#e6e2d9","inverse-surface":"#31302b","primary-fixed-dim":"#d5c3ba","outline":"#807570","on-tertiary-container":"#d07f63","on-tertiary-fixed-variant":"#73351e","accent-sage":"#788A72","primary":"#1f1610","on-background":"#1c1c16","inverse-on-surface":"#f4f0e7","tertiary-fixed-dim":"#ffb59c","on-tertiary":"#ffffff","on-surface":"#1c1c16","surface-container-highest":"#e6e2d9","border-strong":"#9A8577","flow-text":"#3C5A45","error-container":"#ffdad6","surface-container-lowest":"#ffffff","on-primary-fixed":"#231914","on-error-container":"#93000a","accent-terracotta":"#BD7656","surface":"#fdf9f0","tertiary-container":"#511b07","surface-container-high":"#ece8df","connect-bg":"#F3DFD5","circles-text":"#72531B","secondary":"#4a6451","error":"#ba1a1a","border-subtle":"#D7C7B9","primary-container":"#352a24","surface-container-low":"#f7f3ea","accent-honey":"#B78B42","quiet-stone":"#62574F","surface-bright":"#fdf9f0","on-primary-fixed-variant":"#51443d","inverse-primary":"#d5c3ba","tertiary":"#320a00","surface-tint":"#695c54","primary-fixed":"#f2dfd5","on-secondary":"#ffffff","connect-text":"#7E3F2D","secondary-fixed-dim":"#b0ceb6","circles-bg":"#F3E6C9","on-secondary-container":"#506b57","on-tertiary-fixed":"#390c00","on-secondary-fixed-variant":"#334c3a","on-secondary-fixed":"#062011","background":"#fdf9f0","secondary-container":"#ccead1","on-primary-container":"#a19088","on-surface-variant":"#4e4540","outline-variant":"#d1c4be","on-primary":"#ffffff","oat-milk":"#F1E9DE","tertiary-fixed":"#ffdbcf","surface-container":"#f1eee5","on-error":"#ffffff","surface-dim":"#dddad1"},"borderRadius":{"DEFAULT":"0.25rem","lg":"0.5rem","xl":"0.75rem","full":"9999px"},"spacing":{"gutter":"1rem","space-xl":"2rem","gutter-desktop":"2rem","space-xs":"0.25rem","space-md":"1rem","space-sm":"0.5rem","margin-tablet":"1.5rem","margin-desktop":"3rem","margin":"1rem","space-lg":"1.5rem"},"fontFamily":{"display-mobile":["Fraunces"],"headline-md":["Fraunces"],"body-sm":["DM Sans"],"title-lg":["DM Sans"],"title-md":["DM Sans"],"headline-lg-mobile":["Fraunces"],"caption":["DM Sans"],"body-lg":["DM Sans"],"display":["Fraunces"],"headline-lg":["Fraunces"],"label":["DM Sans"],"headline-sm":["Fraunces"],"body-md":["DM Sans"]},"fontSize":{"display-mobile":["2.5rem",{"lineHeight":"1.15","letterSpacing":"-0.025em","fontWeight":"600"}],"headline-md":["2.25rem",{"lineHeight":"1.18","letterSpacing":"-0.025em","fontWeight":"600"}],"body-sm":["0.875rem",{"lineHeight":"1.5","fontWeight":"400"}],"title-lg":["1.375rem",{"lineHeight":"1.3","letterSpacing":"-0.015em","fontWeight":"600"}],"title-md":["1.125rem",{"lineHeight":"1.35","letterSpacing":"-0.01em","fontWeight":"600"}],"headline-lg-mobile":["2rem",{"lineHeight":"1.2","letterSpacing":"-0.02em","fontWeight":"600"}],"caption":["0.75rem",{"lineHeight":"1.4","letterSpacing":"0.01em","fontWeight":"500"}],"body-lg":["1.125rem",{"lineHeight":"1.6","fontWeight":"400"}],"display":["3.75rem",{"lineHeight":"1.08","letterSpacing":"-0.035em","fontWeight":"600"}],"headline-lg":["3rem",{"lineHeight":"1.12","letterSpacing":"-0.03em","fontWeight":"600"}],"label":["0.875rem",{"lineHeight":"1.3","fontWeight":"600"}],"headline-sm":["1.75rem",{"lineHeight":"1.22","letterSpacing":"-0.015em","fontWeight":"600"}],"body-md":["1rem",{"lineHeight":"1.55","fontWeight":"400"}]}}}}</script></head><body class="bg-surface-container-low font-body-md text-body-md text-on-surface"><main class="w-full min-h-screen bg-surface-container-low"><div class="flex flex-col w-full">
+<div class="w-full max-w-[820px] mx-auto px-6 py-12 md:py-16 flex flex-col gap-10">
+<!-- Editorial Header & Natural Language Input -->
+<section class="flex flex-col gap-6">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-3">
+<span class="inline-flex items-center justify-center w-9 h-9 rounded-full bg-oat-milk text-primary">
+<span class="material-symbols-outlined text-[20px]">local_cafe</span>
+</span>
+<div class="flex items-center gap-2 font-caption text-caption uppercase tracking-widest text-quiet-stone">
+<span>Roastery &amp; Co.</span>
+<span>·</span>
+<span>BrewSpace</span>
+</div>
+</div>
+<span class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-oat-milk text-on-surface-variant font-caption text-caption">
+<span class="material-symbols-outlined text-[15px] text-accent-honey">wb_sunny</span>
+<span>Morning Flow</span>
+</span>
+</div>
+<h1 class="font-headline-lg text-headline-lg text-primary max-w-[680px]">
+        What would you like from your café visit?
+      </h1>
+<div class="relative bg-surface-container-lowest rounded-xl shadow-sm p-2 transition-shadow focus-within:shadow-md">
+<div class="flex flex-col gap-2">
+<label class="sr-only" for="visit-intent-input">Describe your café visit intent</label>
+<textarea class="w-full bg-surface-container-lowest text-on-surface font-body-lg text-body-lg px-4 py-3 rounded-lg resize-none focus:outline-none placeholder:text-outline" id="visit-intent-input" placeholder="e.g., Work quietly for 60 minutes, then meet people interested in AI startups." rows="2">Work quietly for 60 minutes, then meet people interested in AI startups.</textarea>
+<div class="flex items-center justify-between px-4 pb-2">
+<div class="flex items-center gap-2 font-caption text-caption text-quiet-stone">
+<span class="material-symbols-outlined text-[16px] text-flow-text" style="font-variation-settings: 'FILL' 1;">auto_awesome</span>
+<span>Interpreted live by BrewSpace</span>
+</div>
+<button class="inline-flex items-center gap-1.5 px-3.5 h-9 rounded-full bg-oat-milk text-primary font-caption text-caption hover:bg-surface-container-high transition-colors cursor-pointer" id="reparse-btn" type="button">
+<span class="material-symbols-outlined text-[15px]">refresh</span>
+<span>Update interpretation</span>
+</button>
+</div>
+</div>
+</div>
+</section>
+<!-- Gemini Interpretation Review Card -->
+<section class="bg-porcelain rounded-xl shadow-sm p-6 md:p-8 flex flex-col gap-6">
+<div class="flex items-start justify-between gap-4">
+<div class="flex flex-col gap-1">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-[18px] text-flow-text" style="font-variation-settings: 'FILL' 1;">auto_awesome</span>
+<h2 class="font-title-md text-title-md text-primary">Gemini Interpretation Review</h2>
+</div>
+<p class="font-body-sm text-body-sm text-quiet-stone">
+            Tap any chip to adjust your session preferences before we match your seat.
+          </p>
+</div>
+<span class="px-3 py-1 rounded-full bg-flow-bg text-flow-text font-caption text-caption shrink-0">
+          Ready to plan
+        </span>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+<!-- Mode -->
+<div class="flex flex-col gap-2.5 bg-surface-container-low rounded-xl p-4">
+<div class="flex items-center gap-2 font-caption text-caption uppercase tracking-wider text-quiet-stone">
+<span class="material-symbols-outlined text-[16px]">tune</span>
+<span>Mode</span>
+</div>
+<div class="flex flex-wrap gap-2">
+<button class="chip-btn inline-flex items-center gap-1.5 px-3.5 py-2 rounded-full bg-primary-container text-surface-container-low font-caption text-caption transition-colors cursor-pointer" data-chip="" data-selected="true" type="button">
+<span class="material-symbols-outlined text-[15px]">check</span>
+<span>Focus first, then Available</span>
+</button>
+</div>
+</div>
+<!-- Duration -->
+<div class="flex flex-col gap-2.5 bg-surface-container-low rounded-xl p-4">
+<div class="flex items-center gap-2 font-caption text-caption uppercase tracking-wider text-quiet-stone">
+<span class="material-symbols-outlined text-[16px]">schedule</span>
+<span>Duration</span>
+</div>
+<div class="flex flex-wrap gap-2">
+<button class="chip-btn inline-flex items-center gap-1.5 px-3.5 py-2 rounded-full bg-primary-container text-surface-container-low font-caption text-caption transition-colors cursor-pointer" data-chip="" data-selected="true" type="button">
+<span class="material-symbols-outlined text-[15px]">check</span>
+<span>60 min focus</span>
+</button>
+<button class="chip-btn inline-flex items-center gap-1.5 px-3.5 py-2 rounded-full bg-oat-milk text-primary font-caption text-caption transition-colors cursor-pointer" data-chip="" data-selected="false" type="button">
+<span>+30 min social</span>
+</button>
+</div>
+</div>
+<!-- Seating needs -->
+<div class="flex flex-col gap-2.5 bg-surface-container-low rounded-xl p-4">
+<div class="flex items-center gap-2 font-caption text-caption uppercase tracking-wider text-quiet-stone">
+<span class="material-symbols-outlined text-[16px]">chair_alt</span>
+<span>Seating needs</span>
+</div>
+<div class="flex flex-wrap gap-2">
+<button class="chip-btn inline-flex items-center gap-1.5 px-3.5 py-2 rounded-full bg-primary-container text-surface-container-low font-caption text-caption transition-colors cursor-pointer" data-chip="" data-selected="true" type="button">
+<span class="material-symbols-outlined text-[15px]">check</span>
+<span>Quiet zone</span>
+</button>
+<button class="chip-btn inline-flex items-center gap-1.5 px-3.5 py-2 rounded-full bg-primary-container text-surface-container-low font-caption text-caption transition-colors cursor-pointer" data-chip="" data-selected="true" type="button">
+<span class="material-symbols-outlined text-[15px]">bolt</span>
+<span>Power outlet</span>
+</button>
+</div>
+</div>
+<!-- Interests -->
+<div class="flex flex-col gap-2.5 bg-surface-container-low rounded-xl p-4">
+<div class="flex items-center gap-2 font-caption text-caption uppercase tracking-wider text-quiet-stone">
+<span class="material-symbols-outlined text-[16px]">interests</span>
+<span>Interests</span>
+</div>
+<div class="flex flex-wrap gap-2">
+<button class="chip-btn inline-flex items-center gap-1.5 px-3.5 py-2 rounded-full bg-primary-container text-surface-container-low font-caption text-caption transition-colors cursor-pointer" data-chip="" data-selected="true" type="button">
+<span class="material-symbols-outlined text-[15px]">check</span>
+<span>AI</span>
+</button>
+<button class="chip-btn inline-flex items-center gap-1.5 px-3.5 py-2 rounded-full bg-primary-container text-surface-container-low font-caption text-caption transition-colors cursor-pointer" data-chip="" data-selected="true" type="button">
+<span class="material-symbols-outlined text-[15px]">check</span>
+<span>Startups</span>
+</button>
+</div>
+</div>
+</div>
+</section>
+<!-- Your Social Permissions Card -->
+<section class="bg-porcelain rounded-xl shadow-sm p-6 md:p-8 flex flex-col gap-6">
+<div class="flex items-start justify-between gap-4">
+<div class="flex flex-col gap-1">
+<h2 class="font-title-md text-title-md text-primary">Your Social Permissions</h2>
+<p class="font-body-sm text-body-sm text-quiet-stone">
+            Both options start off by default. You are always in control of when you become discoverable.
+          </p>
+</div>
+<span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-oat-milk text-quiet-stone font-caption text-caption shrink-0">
+<span class="material-symbols-outlined text-[14px]">lock</span>
+<span>Private by default</span>
+</span>
+</div>
+<div class="flex flex-col gap-4">
+<!-- Toggle 1: Café Connect -->
+<div class="flex items-center justify-between gap-6 bg-connect-bg rounded-xl p-5">
+<div class="flex items-start gap-4 min-w-0">
+<span class="inline-flex items-center justify-center w-10 h-10 rounded-full bg-porcelain text-connect-text shrink-0">
+<span class="material-symbols-outlined text-[20px]">forum</span>
+</span>
+<div class="flex flex-col gap-1 min-w-0">
+<span class="font-label text-label text-connect-text">
+                Allow 1:1 Connection suggestions (Café Connect)
+              </span>
+<span class="font-body-sm text-body-sm text-connect-text opacity-85">
+                Your exact seat and identity stay private until mutual acceptance
+              </span>
+</div>
+</div>
+<button aria-checked="false" aria-label="Allow 1:1 Connection suggestions (Café Connect)" class="permission-toggle relative inline-flex items-center shrink-0 w-14 h-8 rounded-full bg-oat-milk transition-colors duration-200 cursor-pointer p-1" role="switch" type="button">
+<span class="toggle-thumb inline-block w-6 h-6 rounded-full bg-porcelain shadow-sm transform translate-x-0 transition-transform duration-200"></span>
+</button>
+</div>
+<!-- Toggle 2: Coffee Circles -->
+<div class="flex items-center justify-between gap-6 bg-circles-bg rounded-xl p-5">
+<div class="flex items-start gap-4 min-w-0">
+<span class="inline-flex items-center justify-center w-10 h-10 rounded-full bg-porcelain text-circles-text shrink-0">
+<span class="material-symbols-outlined text-[20px]">diversity_3</span>
+</span>
+<div class="flex flex-col gap-1 min-w-0">
+<span class="font-label text-label text-circles-text">
+                Allow group circle invitations (Coffee Circles)
+              </span>
+<span class="font-body-sm text-body-sm text-circles-text opacity-85">
+                Your exact seat and identity stay private until mutual acceptance
+              </span>
+</div>
+</div>
+<button aria-checked="false" aria-label="Allow group circle invitations (Coffee Circles)" class="permission-toggle relative inline-flex items-center shrink-0 w-14 h-8 rounded-full bg-oat-milk transition-colors duration-200 cursor-pointer p-1" role="switch" type="button">
+<span class="toggle-thumb inline-block w-6 h-6 rounded-full bg-porcelain shadow-sm transform translate-x-0 transition-transform duration-200"></span>
+</button>
+</div>
+</div>
+</section>
+<!-- Primary & Secondary Actions -->
+<section class="flex flex-col sm:flex-row items-center justify-between gap-4 pt-2">
+<button class="w-full sm:w-auto h-12 px-7 rounded-full bg-oat-milk text-primary font-label text-label hover:bg-surface-container-high transition-colors cursor-pointer" id="skip-social-btn" type="button">
+        Skip social features
+      </button>
+<button class="w-full sm:w-auto h-12 px-8 rounded-full bg-primary-container text-surface-container-low font-label text-label inline-flex items-center justify-center gap-2 hover:bg-primary transition-colors shadow-sm cursor-pointer" id="build-plan-btn" type="button">
+<span>Build my visit plan</span>
+<span class="material-symbols-outlined text-[18px]">arrow_forward</span>
+</button>
+</section>
+</div>
+<script>
+    (function () {
+      const chips = document.querySelectorAll('.chip-btn');
+      chips.forEach((chip) => {
+        chip.addEventListener('click', () => {
+          const isSelected = chip.getAttribute('data-selected') === 'true';
+          const nextState = !isSelected;
+          chip.setAttribute('data-selected', String(nextState));
+          if (nextState) {
+            chip.classList.remove('bg-oat-milk', 'text-primary');
+            chip.classList.add('bg-primary-container', 'text-surface-container-low');
+          } else {
+            chip.classList.remove('bg-primary-container', 'text-surface-container-low');
+            chip.classList.add('bg-oat-milk', 'text-primary');
+          }
+        });
+      });
+
+      const toggles = document.querySelectorAll('.permission-toggle');
+      toggles.forEach((toggle) => {
+        toggle.addEventListener('click', () => {
+          const isChecked = toggle.getAttribute('aria-checked') === 'true';
+          const nextChecked = !isChecked;
+          toggle.setAttribute('aria-checked', String(nextChecked));
+          const thumb = toggle.querySelector('.toggle-thumb');
+          if (nextChecked) {
+            toggle.classList.remove('bg-oat-milk');
+            toggle.classList.add('bg-primary-container');
+            thumb.classList.remove('translate-x-0');
+            thumb.classList.add('translate-x-6');
+          } else {
+            toggle.classList.remove('bg-primary-container');
+            toggle.classList.add('bg-oat-milk');
+            thumb.classList.remove('translate-x-6');
+            thumb.classList.add('translate-x-0');
+          }
+        });
+      });
+
+      const skipBtn = document.getElementById('skip-social-btn');
+      if (skipBtn) {
+        skipBtn.addEventListener('click', () => {
+          toggles.forEach((toggle) => {
+            toggle.setAttribute('aria-checked', 'false');
+            toggle.classList.remove('bg-primary-container');
+            toggle.classList.add('bg-oat-milk');
+            const thumb = toggle.querySelector('.toggle-thumb');
+            if (thumb) {
+              thumb.classList.remove('translate-x-6');
+              thumb.classList.add('translate-x-0');
+            }
+          });
+        });
+      }
+    })();
+  </script>
+</div></main></body></html>

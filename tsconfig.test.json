@@ -1,0 +1,24 @@
+{
+  "compilerOptions": {
+    "target": "ES2020",
+    "module": "CommonJS",
+    "moduleResolution": "Node",
+    "outDir": ".test-dist",
+    "rootDir": "src",
+    "strict": true,
+    "esModuleInterop": true,
+    "skipLibCheck": true,
+    "resolveJsonModule": true,
+    "types": ["node"]
+  },
+  "include": [
+    "src/lib/types.ts",
+    "src/lib/schemas.ts",
+    "src/lib/seed-data.ts",
+    "src/lib/store.ts",
+    "src/lib/gemini.ts",
+    "src/lib/auth-server.ts",
+    "src/lib/services/*.ts",
+    "src/lib/__tests__/*.test.ts"
+  ]
+}

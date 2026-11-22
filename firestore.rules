@@ -1,0 +1,77 @@
+rules_version = '2';
+
+service cloud.firestore {
+  match /databases/{database}/documents {
+    function isSignedIn() {
+      return request.auth != null;
+    }
+
+    function isStaff() {
+      return isSignedIn() && (
+        request.auth.token.role == 'staff' ||
+        request.auth.token.role == 'demo_admin'
+      );
+    }
+
+    // Café metadata: readable by any signed-in visitor; writable only by staff/server
+    match /cafes/{cafeId} {
+      allow read: if isSignedIn();
+      allow write: if isStaff();
+    }
+
+    // Seat inventory: live occupancy readable by signed-in visitors (no customer PII stored here).
+    // All claims/updates are performed atomically via backend Admin SDK transactions.
+    match /seats/{seatId} {
+      allow read: if isSignedIn();
+      allow write: if false;
+    }
+
+    // User profile: strictly private to the authenticated owner
+    match /users/{userId} {
+      allow read, write: if isSignedIn() && request.auth.uid == userId;
+    }
+
+    // Visit Context: strictly private to the owning visitor (never readable by other customers).
+    // All mutations go through backend API routes to enforce mode transitions and consent rules.
+    match /visits/{visitId} {
+      allow read: if isSignedIn() && (resource.data.userId == request.auth.uid || isStaff());
+      allow write: if false;
+    }
+
+    // Café Connect matches: readable ONLY by the two participants.
+    // Writes go through backend API routes to enforce mutual consent before alias/location disclosure.
+    match /matches/{matchId} {
+      allow read: if isSignedIn() && request.auth.uid in resource.data.participantIds;
+      allow write: if false;
+    }
+
+    // Coffee Circles: public topic/time/status/count readable by signed-in visitors;
+    // confirmed table assignment & quorum transitions are enforced exclusively by backend transactions.
+    match /circles/{circleId} {
+      allow read: if isSignedIn();
+      allow write: if false;
+    }
+
+    // Circle RSVPs: readable only by the RSVP owner or staff; writes via backend transactions.
+    match /rsvps/{rsvpId} {
+      allow read: if isSignedIn() && (resource.data.userId == request.auth.uid || isStaff());
+      allow write: if false;
+    }
+
+    // Operational events & safety reports: server Admin SDK / staff only
+    match /events/{eventId} {
+      allow read: if isStaff();
+      allow write: if false;
+    }
+
+    match /reports/{reportId} {
+      allow read: if isStaff();
+      allow write: if false;
+    }
+
+    // Default deny for any unlisted collection
+    match /{document=**} {
+      allow read, write: if false;
+    }
+  }
+}

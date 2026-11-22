@@ -1,0 +1,8 @@
+node_modules
+.next
+.git
+.env*
+Blueprint
+infra
+*.md
+*.docx
