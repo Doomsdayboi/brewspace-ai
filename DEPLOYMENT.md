@@ -1,18 +1,16 @@
 # BrewSpace AI — Deployment & Operations Runbook
 
-## 1. Architecture & Budget Summary (Hard Cap: \$5/month)
+## 1. Architecture & FinOps Summary (Serverless, Scale-to-Zero)
 
-| Component | Google Cloud Service | Configuration | Est. Monthly Cost |
+| Component | Google Cloud Service | Configuration | Cost Profile |
 | :--- | :--- | :--- | :--- |
-| Web App + API | Cloud Run (`asia-south1`) | 1 container, `--min-instances=0`, `--max-instances=2`, 512Mi RAM, 1 vCPU | \$0.00 (free tier) |
-| Database & Realtime | Cloud Firestore (`asia-south1`) | Native mode, transactional writes, least-privilege `firestore.rules` | \$0.00 (free tier) |
-| AI Orchestration | Gemini API (`aiplatform.googleapis.com`) | `@google/genai`, `gemini-3.5-flash-lite`, `GOOGLE_CLOUD_LOCATION=global` | ~\$0.05 – \$0.50 |
-| Auth | Firebase Authentication | Anonymous guest sessions + Email/Password with custom claims (`staff` / `demo_admin`) | \$0.00 (free tier) |
-| Container Registry | Artifact Registry (`asia-south1`) | Cleanup policy keeps latest 3 images (<0.5 GB free tier) | \$0.00 |
-| Secrets | Secret Manager | `brewspace-demo-admin-secret` (1 version, free tier covers 6) | \$0.00 |
-| Billing Guardrail | Cloud Billing Budgets | \$5/month cap with alerts at **50% (\$2.50)**, **90% (\$4.50)**, **100% (\$5.00)** | \$0.00 |
-
-**Total Estimated Monthly Cost:** **~\$0.10 – \$0.75 / month**
+| Web App + API | Cloud Run (`asia-south1`) | 1 container, `--min-instances=0`, `--max-instances=2`, 512Mi RAM, 1 vCPU | Scales to zero (free-tier eligible) |
+| Database & Realtime | Cloud Firestore (`asia-south1`) | Native mode, transactional writes, least-privilege `firestore.rules` | Free-tier eligible |
+| AI Orchestration | Gemini API (`aiplatform.googleapis.com`) | `@google/genai`, `gemini-3.5-flash-lite`, `GOOGLE_CLOUD_LOCATION=global` | Pay-per-token (Flash-Lite tier) |
+| Auth | Firebase Authentication | Anonymous guest sessions + Email/Password with custom claims (`staff` / `demo_admin`) | Free-tier eligible |
+| Container Registry | Artifact Registry (`asia-south1`) | Cleanup policy keeps latest 3 images (<0.5 GB free tier) | Free-tier eligible |
+| Secrets | Secret Manager | `brewspace-demo-admin-secret` (1 active version) | Free-tier eligible |
+| Billing Guardrail | Cloud Billing Budgets | Configurable monthly cap (`BUDGET_AMOUNT_USD`) with alerts at **50%**, **90%**, **100%** | Included |
 
 ---
 

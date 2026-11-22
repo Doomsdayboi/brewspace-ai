@@ -21,7 +21,7 @@ RUN_SA_NAME="brewspace-run-sa"
 BUILD_SA_NAME="brewspace-build-sa"
 RUN_SA_EMAIL="${RUN_SA_NAME}@${PROJECT_ID}.iam.gserviceaccount.com"
 BUILD_SA_EMAIL="${BUILD_SA_NAME}@${PROJECT_ID}.iam.gserviceaccount.com"
-BUDGET_AMOUNT_USD="5"
+BUDGET_AMOUNT_USD="${BUDGET_AMOUNT_USD:-5}"
 
 run_cmd() {
   local comment="$1"
